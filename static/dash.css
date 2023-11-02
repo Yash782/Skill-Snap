@@ -1,0 +1,325 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style for the top section container */
+.top-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Style for the Top Left section (user profile) */
+.top-left-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 400px;
+    height: 300px;
+    margin: 10px;
+}
+
+/* Style for the user profile image */
+.user-profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* Style for the user's name */
+.user-profile h3 {
+    font-size: 18px; /* Adjust font size as needed */
+    margin: 0;
+    margin-bottom: 10px; /* Add margin to create a gap between name and location */
+}
+
+/* Style for the Edit Profile button */
+.edit-profile {
+    margin-top: 1em; /* Add margin to create a gap */
+    display: flex;
+    justify-content: flex-end; /* Move the button to the right */
+    align-items: center; /* Align items vertically */
+    width: 100%; /* Fill the width of the container */
+}
+
+/* Style for the Edit Profile button */
+.edit-profile button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    align-self: flex-end; /* Align the button to the right */
+}
+
+
+
+
+.user-profile .location {
+    display: flex;
+    align-items: center; /* Align items vertically */
+}
+
+/* Style for the custom location image */
+.user-profile .location img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+/* Style for the Top Right section (personal info) */
+.top-right-section {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 71%;
+    height: 300px;
+    overflow: auto;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+/* Style for form labels */
+form label {
+    font-weight: bold;
+    color: #373738;
+    font-size: 18px;
+    display: block;
+    text-align: left;
+}
+
+/* Style for form input fields */
+form .form-group input,
+form .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 5px;
+    font-size: 16px;
+    text-align: left;
+}
+
+/* Style for the form */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style for the Edit Information button */
+.edit-button button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.edit-button {
+    margin-top: auto;
+    align-self: flex-end;
+}
+/* Style for the Socials section */
+.socials-section {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 400px; /* Adjust the width as needed */
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+/* Style for the section title */
+.socials-section h3 {
+    font-size: 18px;
+    margin: 0;
+}
+
+/* Style for the social links */
+.social-links {
+    list-style: none;
+    padding: 0;
+}
+
+.social-links li {
+    margin-top: 10px;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 16px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+/* Style for the Edit Socials button */
+.edit-button button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+    margin-left: auto; /* Push the button to the right */
+}
+
+.edit-button button:hover {
+    background-color: #0056b3;
+}
+.socials-box {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 400px; /* Adjust the width as needed */
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+/* Style for social media logo images */
+.socials-box img {
+    width: 30px; /* Adjust the width as needed */
+    height: 30px; /* Adjust the height as needed */
+    margin-right: 10px; /* Add some space between the logo and the input field */
+}
+
+/* Style for the social items */
+.social-item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0; /* Add margin between items */
+}
+
+/* Style for the edit button */
+.edit-button button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+/* Style for the edit icon */
+#edit-icon {
+    width: 30px; /* Adjust the width as needed */
+    height: 30px; /* Adjust the height as needed */
+    cursor: pointer;
+}
+/* Style for the 4th box (Certificates) */
+.box-4 {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 70%;
+    margin: 10px;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    top: 320px;
+}
+
+/* Style for certificates */
+.certificate {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+}
+
+/* Style for the toggle switches */
+.switch {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 30px;
+    height: 15px;
+    background-color: #ccc;
+    border-radius: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+input:checked + .slider {
+    background-color: #007bff;
+}
+
+input:checked + .slider:before {
+    transform: translateX(12px);
+}
+
+/* Style for the "Add Certificates" button */
+.add-certificates-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 7px 12px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+    position: absolute;
+    top: 8px; /* Adjust the top position as needed */
+    right: 25px; /* Adjust the right position as needed */
+}
+
+.add-certificates-button:hover {
+    background-color: #0056b3;
+}

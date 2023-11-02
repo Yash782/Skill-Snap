@@ -4,9 +4,119 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Skill Snap</title>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{% static "dash.css" %}" />
   </head>
   <body>
-    <h1>User Dashboard</h1>
+    <div class="top-section">
+      <div class="top-left-section">
+        <div class="user-profile">
+          <img src="{% static "user-fotuuu.jpg" %}" alt="User Profile" />
+          <h3>John Doe</h3>
+          <p class="location">
+            <img src="{% static "location.png" %}" alt="Location Icon" /> Bay
+            Area, San Francisco, CA
+          </p>
+        </div>
+        <div class="edit-profile">
+          <button>Edit Profile</button>
+        </div>
+      </div>
+
+      <div class="top-right-section">
+        <div class="user-info">
+          <h3><center>Personal Information</center></h3>
+          <form>
+            <div class="form-group">
+              <label for="full-name">Full Name</label>
+              <input
+                type="text"
+                id="full-name"
+                name="full-name"
+                placeholder="John Doe"
+              />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="(239) 816-9029"
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="johndoe@example.com"
+              />
+            </div>
+            <div class="form-group">
+              <label for="address">Address</label>
+              <textarea
+                id="address"
+                name="address"
+                placeholder="Bay Area, San Francisco, CA"
+              ></textarea>
+            </div>
+
+            <div class="edit-button">
+              <button>Edit Information</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="socials-box">
+      <h3>Socials</h3>
+      <div class="social-item">
+        <img src="{% static 'linkedin.png' %}" alt="LinkedIn Logo" />
+        <p>www.linkedin.com./in/joe</p>
+      </div>
+      <div class="social-item">
+        <img src="{% static 'github.png' %}" alt="GitHub Logo" />
+        <p>joe_688</p>
+      </div>
+      <div class="social-item">
+        <img src="{% static 'portfolio.png' %}" alt="Portfolio Logo" />
+        <p>joe-portfolio.com</p>
+      </div>
+      <div class="other">
+        <img src="{% static 'website.png' %}" alt="other website logo" />
+        <p>www.joe.com</p>
+      </div>
+      <!-- Add more social items as needed -->
+      <div class="edit-button">
+        <button>Edit</button>
+      </div>
+    </div>
+    <div class="box-4">
+      <h2>Certificates</h2>
+      <button class="add-certificates-button">
+        <a href="add_certi.html" class="nav-link">Add Certificate</a>
+      </button>
+      <div class="certificate">
+        <h4>Certificate Title 1</h4>
+        <label class="switch">
+          <input type="checkbox" />
+          <span class="slider round"></span>
+        </label>
+        <p>Certificate description...</p>
+      </div>
+
+      <div class="certificate">
+        <h4>Certificate Title 2</h4>
+        <label class="switch">
+          <input type="checkbox" />
+          <span class="slider round"></span>
+        </label>
+        <p>Certificate description...</p>
+      </div>
+
+      <!-- Add more certificates with toggles as needed -->
+    </div>
   </body>
 </html>
