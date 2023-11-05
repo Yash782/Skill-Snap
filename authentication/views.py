@@ -37,16 +37,20 @@ def signin(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
+        print(f"Username: {username}")
+        print(f"Password: {password}")
 
         user = auth.authenticate(username=username, password = password)
 
         if user is not None:
             auth.login(request, user)
+            print("Authenticated")
             return redirect('home')
+            
         
         else:
             messages.info(request, "Invaild credentials ")
-            return redirect('/signin')
+            return redirect('signin')
 
 
     else:
