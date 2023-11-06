@@ -10,3 +10,5 @@ def dashboard(request):
 
 def userInfo(request):
     return render(request, 'userInfo.html')
+
+

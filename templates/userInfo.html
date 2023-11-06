@@ -1,15 +1,21 @@
+{% load static %} {% include "navbar.html" %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href={% static "userInfoCss.css" %} />
     <title>Add Certificate - SkillSnap</title>
   </head>
   <body>
     <div class="form-container">
       <h1>Add Certificate</h1>
-      <form action="#" method="post" enctype="multipart/form-data">
+      <form
+        action="uploadCertificate"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        {% csrf_token %}
         <label for="certificate">Upload Certificate (PDF)</label>
         <input type="file" id="certificate" name="certificate" />
         <label for="title">Title</label>
