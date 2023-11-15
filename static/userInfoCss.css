@@ -59,7 +59,7 @@ input[type="file"] {
 /* Style the submit button */
 button[type="submit"] {
     display: inline-block;
-    background-color: #007bff;
+    background-color: #5cd34a;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -70,5 +70,5 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #478f3c;
 }
