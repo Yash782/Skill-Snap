@@ -45,7 +45,7 @@ def signin(request):
         if user is not None:
             auth.login(request, user)
             print("Authenticated")
-            return redirect('home')
+            return redirect('home/')
             
         
         else:
