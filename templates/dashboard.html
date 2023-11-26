@@ -12,61 +12,29 @@
       <div class="top-left-section">
         <div class="user-profile">
           <img src="{% static "user-fotuuu.jpg" %}" alt="User Profile" />
-          <h3>John Doe</h3>
+          <h3>John Doe</h3> 
           <p class="location">
             <img src="{% static "location.png" %}" alt="Location Icon" /> Bay
             Area, San Francisco, CA
           </p>
-        </div>
-        <div class="edit-profile">
-          <button>Edit Profile</button>
+          <div class="edit-profile">
+            <button>Edit Profile</button>
+             
+          </div>
+          
         </div>
       </div>
 
       <div class="top-right-section">
         <div class="user-info">
-          <h3><center>Personal Information</center></h3>
-          <form>
-            <div class="form-group">
-              <label for="full-name">Full Name</label>
-              <input
-                type="text"
-                id="full-name"
-                name="full-name"
-                placeholder="John Doe"
-              />
-            </div>
-            <div class="form-group">
-              <label for="phone">Phone Number</label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                placeholder="(239) 816-9029"
-              />
-            </div>
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="johndoe@example.com"
-              />
-            </div>
-            <div class="form-group">
-              <label for="address">Address</label>
-              <textarea
-                id="address"
-                name="address"
-                placeholder="Bay Area, San Francisco, CA"
-              ></textarea>
-            </div>
-
-            <div class="edit-button">
-              <button>Edit Information</button>
-            </div>
-          </form>
+         <center> <strong><h3>Personal Information </strong></h3></center>
+          <p><strong>Full Name:</strong> John Doe</p>
+          <p><strong>Email:</strong> johndoe@example.com</p>
+          <p><strong>Phone Number:</strong> (239) 816-9029</p>
+          <p> <strong> Address: </strong> Aurangabad Maharashtra India </p>
+        </div>
+        <div class="edit-profile">
+          <button>Edit Information</button>
         </div>
       </div>
     </div>
@@ -84,14 +52,15 @@
         <img src="{% static 'portfolio.png' %}" alt="Portfolio Logo" />
         <p>joe-portfolio.com</p>
       </div>
-      <div class="other">
-        <img src="{% static 'website.png' %}" alt="other website logo" />
+      <div class="social-item">
+        <img src="{% static 'website.png' %}" alt="Other Website Logo" />
         <p>www.joe.com</p>
       </div>
       <!-- Add more social items as needed -->
       <div class="edit-button">
-        <button>Edit</button>
-      </div>
+        <button>Edit Socials</button>
+    </div>
+    
     </div>
     <div class="box-4">
       <h2>Certificates</h2>
