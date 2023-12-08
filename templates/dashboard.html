@@ -12,7 +12,7 @@
       <div class="top-left-section">
         <div class="user-profile">
           <img src="{% static "user-fotuuu.jpg" %}" alt="User Profile" />
-          <h3>John Doe</h3> 
+          <h3>{{ user.first_name }}</h3> 
           <p class="location">
             <img src="{% static "location.png" %}" alt="Location Icon" /> Bay
             Area, San Francisco, CA
@@ -28,9 +28,9 @@
       <div class="top-right-section">
         <div class="user-info">
          <center> <strong><h3>Personal Information </strong></h3></center>
-          <p><strong>Full Name:</strong> John Doe</p>
-          <p><strong>Email:</strong> johndoe@example.com</p>
-          <p><strong>Phone Number:</strong> (239) 816-9029</p>
+          <p><strong>Full Name:</strong> {{ user.first_name }} {{user.last_name}}</p>
+          <p><strong>Email:</strong> {{ user.email }}</p>
+          <p><strong>Username:</strong> {{ user.username }}</p>
           <p> <strong> Address: </strong> Aurangabad Maharashtra India </p>
         </div>
         <div class="edit-profile">
@@ -69,25 +69,32 @@
           >Add Certificate</a
         >
       </button>
-      <div class="certificate">
-        <h4>Certificate Title 1</h4>
-        <label class="switch">
-          <input type="checkbox" />
-          <span class="slider round"></span>
-        </label>
-        <p>Certificate description...</p>
-      </div>
+      {% if certificates %}
+        <div class="certificates">
+            {% for certificate in certificates %}
+                <div class="certificate">
+                    <h4>{{ certificate.certificate_name }}</h4>
+                    <label class="switch">
+                        <input type="checkbox" {% if certificate.is_visible %}checked{% endif %} />
+                        <span class="slider round"></span>
+                    </label>
+                    <p>{{ certificate.certificate_desc }}</p>
+                    <a href="{{ certificate.file.url }}" target="_blank">View Certificate</a>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No certificates uploaded.</p>
+    {% endif %}
 
-      <div class="certificate">
+     <!-- <div class="certificate">
         <h4>Certificate Title 2</h4>
         <label class="switch">
           <input type="checkbox" />
           <span class="slider round"></span>
         </label>
         <p>Certificate description...</p>
-      </div>
-
-      <!-- Add more certificates with toggles as needed -->
+      </div> -->
     </div>
   </body>
 </html>

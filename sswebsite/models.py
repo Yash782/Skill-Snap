@@ -4,9 +4,7 @@ from django.contrib.auth.models import User
 
 class Certificate(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    certiTitle = models.CharField(max_length=255)
-    file = models.FileField(upload_to='user_uploads')
-    certDescription = models.TextField
-    skills = models.CharField(max_length=255)
+    certificate_name = models.CharField(max_length=255)
+    file = models.FileField(upload_to='user_uploads/')
     is_visible = models.BooleanField(default=True)
-    
+    certificate_desc = models.TextField(default='')  
