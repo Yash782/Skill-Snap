@@ -13,13 +13,13 @@
         <div class="user-profile">
           <img src="{% static "user-fotuuu.jpg" %}" alt="User Profile" />
           <h3>{{ user.first_name }}</h3> 
+         <center> <p> <strong> Student </strong> </p></center>
           <p class="location">
             <img src="{% static "location.png" %}" alt="Location Icon" /> Bay
             Area, San Francisco, CA
           </p>
           <div class="edit-profile">
             <button>Edit Profile</button>
-             
           </div>
           
         </div>
@@ -69,6 +69,7 @@
           >Add Certificate</a
         >
       </button>
+      
       {% if certificates %}
         <div class="certificates">
             {% for certificate in certificates %}
