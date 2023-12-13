@@ -23,6 +23,7 @@
     width: 400px;
     height: 300px;
     margin: 10px;
+    overflow-y: auto;
 }
 
 /* Style for the user profile image */
@@ -40,6 +41,7 @@
     font-size: 18px;
     margin: 0;
     margin-bottom: 10px;
+    
 }
 
 /* Style for the Edit Profile button */
