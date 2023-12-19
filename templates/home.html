@@ -14,137 +14,6 @@
     <link rel="stylesheet" href="{% static "dash.css" %}" />
 
     <style>
-      /* ... (your existing styles) ... */
-
-      /* Style for the top section container */
-      .top-section {
-        display: flex;
-        justify-content: space-between; /* Adjust as needed */
-        align-items: flex-start;
-        margin-top: 10px; /* Add margin for spacing */
-      }
-
-          /* Style for the Top Left section (user profile) */
-      .top-left-section {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start; /* Align user profile to the left */
-        padding: 20px;
-        background-color: #f0f0f0;
-        border: 1px solid #ddd;
-        border-radius: 10px;
-        width: 310px;
-        height: 600px;
-        margin: 10px;
-      }
-
-      /* Style for the user profile image */
-      .user-profile img {
-        width: 150px; /* Adjust the size as needed */
-        height: 150px;
-        border-radius: 50%;
-        margin-bottom: 10px;
-        margin: 0 auto;
-        display: block;
-      }
-
-      /* Style for the social logo images */
-      .social-item img {
-        width: 30px; /* Adjust the size as needed */
-        height: 30px;
-        margin-right: 10px;
-      }
-
-      /* Style for the user information */
-      .user-info {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      /* Style for each user information item */
-      .user-info p {
-        margin: 5px 0;
-      }
-
-      /* Style for the social items */
-      .social-items {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin-top: 20px; /* Add margin for spacing */
-      }
-
-      .social-item {
-        display: flex;
-        align-items: center;
-        margin: 1px;
-        justify-content: left;
-      }
-
-  .box-2 {
-        background-color: #f0f0f0;
-        border: 1px solid #ddd;
-        border-radius: 10px;
-        padding: 20px;
-        width: 70%;
-        margin: 10px;
-        position: absolute;
-        right: 10px;
-        bottom: 105px;
-        top: 10px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      /* Style for the certificate items */
-      .certificates-items {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin-top: 20px;
-      }
-
-      /* Style for each certificate item */
-      .certificates-item {
-        display: flex;
-        align-items: center;
-        margin: 5px;
-        justify-content: left;
-      }
- /* Style for the certificate photo */
-      .certificates-item img {
-        width: 200px;
-        height: auto;
-        border-radius: none;
-        margin-right: 20px; /* Adjust the margin between certificates */
-      }
-
-      /* Style for the certificate description */
-      .certificate-description {
-        width: 100%;
-        text-align: left;
-      }
-      /* Style for the certificate number */
-      .certificate-number {
-        font-size: 20px;
-        font-weight: bold;
-        margin-right: 10px;
-      }
-      
-       </style>
-       <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="{% static "dash.css" %}" />
-
-    <style>
-      /* ... (your existing styles) ... */
-
       /* Style for the top section container */
       .top-section {
         display: flex;
@@ -211,14 +80,10 @@
         justify-content: left;
       }
 
-     
       .box-2 {
-        background-color: #f0f0f0;
-        border: 1px solid #ddd;
-        border-radius: 10px;
         padding: 20px;
         width: 70%;
-        margin: 10px;
+        margin: 50px;
         position: absolute;
         right: 10px;
         bottom: 105px;
@@ -243,7 +108,6 @@
         margin: 5px;
         justify-content: left;
       }
-
       /* Style for the certificate photo */
       .certificates-item img {
         width: 200px;
@@ -263,94 +127,73 @@
         font-weight: bold;
         margin-right: 10px;
       }
-      
-
-
-
-
-
-
     </style>
-
-
-
-
-    </style>
-
-
   </head>
-
   <body>
     <div class="top-section">
       <div class="top-left-section">
         <div class="user-profile">
-          <img src="New folder\user-fotuuu.jpg" alt="User Profile" />
+          <img src="{% static 'varad photo.jpg' %}" alt="User Profile" />
           <div class="user-info">
-            <p><strong>Full Name:</strong> Yashaswi Mohod</p>
-            <p><strong>Email:</strong> Yashaswmohod@gmail.com</p>
+            <p>
+              <strong>Full Name:</strong> {{ user.first_name }}
+              {{user.last_name}}
+            </p>
+            <p><strong>Email:</strong> {{ user.email }}</p>
+            <p><strong>Username: </strong>{{ user.username }}</p>
             <p><strong>Phone Number:</strong> (239) 816-9029</p>
-            <p><strong>Address:</strong> Aurangabad Maharashtra India</p>
+            <p>
+              <strong>Address:</strong> Chhatrapati Sambhajinagar Maharashtra
+              India
+            </p>
             <p><strong>Position:</strong> Web Developer</p>
-            <p><strong>Pin Code:</strong> 431001</p>
           </div>
         </div>
 
-
         <div class="social-items">
           <div class="social-item">
-            <img src="New folder\linkedin.png" alt="LinkedIn Logo">
-            <p> www.linkedin.com</p>
+            <img src="{% static 'linkedin.png' %}" alt="LinkedIn Logo" />
+            <p>www.linkedin.com</p>
           </div>
-           <div class="social-item">
-            <img src="New folder\github.png" alt="GitHub logo">
-            <p> joe_888 </p>
+          <div class="social-item">
+            <img src="{% static 'github.png' %}" alt="GitHub logo" />
+            <p>joe_888</p>
           </div>
 
           <div class="social-item">
-            <img src="New folder\portfolio.png" alt="Portfolio Logo">
-            <p> joe-portfolio</p>
+            <img src="{% static 'portfolio.png' %}" alt="Portfolio Logo" />
+            <p>joe-portfolio</p>
           </div>
 
           <div class="social-item">
-            <img src="New folder\website.png" alt="Website Logo">
-            <p> www.joe.com</p>
+            <img src="{% static 'website.png' %}" alt="Website Logo" />
+            <p>www.joe.com</p>
           </div>
         </div>
       </div>
     </div>
-
-  
 
     <div class="box-2">
       <h2>CERTIFICATES</h2>
       <div class="certificates-items">
+        {% for certificate in certificates %}
         <div class="certificates-item">
-          <span class="certificate-number">1.</span>
-          <img src="New folder\redhat img.jpg" alt="certificate photo">
+          <span class="certificate-number">{{ forloop.counter }}.</span>
+          <img src="{% static 'redhat.jpg' %}" alt="certificate photo" />
           <div class="certificate-description">
-            <h2>Redhat Certificate</h2>
-            <p>
-                  "I have achieved a commendable score of 257 in my Red Hat certification, showcasing my advanced proficiency in Linux administration. This accomplishment reflects my commitment to excellence and my ability to navigate complex systems effectively."
-            </p>
-            <!-- Optional: Add a button or any other elements as needed -->
+            <h2>{{ certificate.certificate_name }}</h2>
+            <p>{{ certificate.certificate_desc }}</p>
+            <!-- View Certificate Button -->
+            <a
+              href="{{ certificate.file.url }}"
+              target="_blank"
+              class="view-certificate-btn"
+              >View Certificate</a
+            >
           </div>
         </div>
-
-        <div class="certificates-item">
-          <span class="certificate-number">2.</span>
-          <img src="New folder\edit.png" alt="certificate photo">
-          <div class="certificate-description">
-            <h2>AWS Certificate</h2>
-            <p>
-              "Description for the second certificate goes here. You can provide details about the achievement, skills, or any relevant information related to this certificate."
-            </p>
-            <p>You can customize the content based on your needs.</p>
-            <!-- Optional: Add a button or any other elements as needed -->
-          </div>
-        </div>
+        {% endfor %}
       </div>
     </div>
-
-    <!-- ... (your existing code) ... -->
   </body>
 </html>

@@ -6,7 +6,14 @@ from .forms import CertificateForm
 # Create your views here.
 
 def home(request):
-    return render(request, 'home.html')
+    # Checking if user is authenticated.
+    if request.user.is_authenticated:
+        certificates = Certificate.objects.filter(user=request.user)
+        user_name = User.objects.all
+    else:
+        certificates = []  # Or handle the case when the user is not authenticated
+
+    return render(request, 'home.html', {'certificates': certificates})
 
 def dashboard(request):
     user_name = User.objects.all
@@ -16,7 +23,7 @@ def dashboard(request):
 def delete_certificate(request, certificate_id):
     certificate = get_object_or_404(Certificate, id=certificate_id)
 
-    # Ensure that only the owner can delete the certificate
+    # To ensure that only user can delte the certificate
     if request.user == certificate.user:
         certificate.delete()
 
