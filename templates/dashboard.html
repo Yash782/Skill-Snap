@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
     <link rel="stylesheet" href="{% static "dash.css" %}" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-r5HIrAB1NIn4zI0TsPEud1paXuL1rMjZX101FDS0txI1/cur7QF4lXb8J+qJBEt" crossorigin="anonymous">
-  </head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <body>
     <div class="top-section">
       <div class="top-left-section">
@@ -84,7 +83,7 @@
                     <p>{{ certificate.certificate_desc }}</p>
                     <a href="{{ certificate.file.url }}" target="_blank">View Certificate</a>
                     <a href="{% url 'delete_certificate' certificate.id %}" class="delete-icon">
-                      <i class="fa fa-trash" aria-hidden="true"></i> Delete
+                      <i class="fa fa-trash-o" style="font-size:20px;color:red"></i>
                   </a>
                 </div>
 
