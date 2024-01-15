@@ -1,0 +1,40 @@
+{% load static %} {% include "navbar.html" %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="{% static "userInfoCss.css" %}">
+  </head>
+  <body>
+    <div class="edit-profile-container">
+      <h2>Edit Profile</h2>
+      <form
+        action="{% url 'edit_profile' %}"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        {% csrf_token %}
+        <label for="profile-picture">Profile Picture:</label>
+        <input
+          type="file"
+          id="profile-photo"
+          name="profile_photo"
+          accept="image/*"
+        />
+
+        <label for="current-position">Current Position:</label>
+        <input type="text" id="current-position" name="current_position" />
+
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" />
+
+        <label for="Phone Number">Phone Number:</label>
+        <input type="text" id="phone" name="phone" />
+
+        <button type="submit">Save Changes</button>
+      </form>
+    </div>
+  </body>
+</html>

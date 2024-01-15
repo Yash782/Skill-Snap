@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from .models import User, Certificate
-from .forms import CertificateForm
+from .models import User, Certificate, UserProfile
+from .forms import CertificateForm, ProfileForm
 
 # Create your views here.
 
@@ -10,15 +10,19 @@ def home(request):
     if request.user.is_authenticated:
         certificates = Certificate.objects.filter(user=request.user)
         user_name = User.objects.all
+        userInfo = UserProfile.objects.get(user = request.user)
     else:
         certificates = []  # Or handle the case when the user is not authenticated
 
-    return render(request, 'home.html', {'certificates': certificates})
+    return render(request, 'home.html', {'certificates': certificates, 'userInfo' : userInfo})
+
 
 def dashboard(request):
     user_name = User.objects.all
     certificates = Certificate.objects.filter(user=request.user)
-    return render(request, 'dashboard.html', {'certificates': certificates})
+    userInfo = UserProfile.objects.get(user = request.user)
+    return render(request, 'dashboard.html', {'certificates': certificates, 'userInfo' : userInfo})
+
 
 def delete_certificate(request, certificate_id):
     certificate = get_object_or_404(Certificate, id=certificate_id)
@@ -43,3 +47,20 @@ def upload_certificate(request):
     else:
         form = CertificateForm()
     return render(request, 'userInfo.html', {'form': form})
+
+
+
+
+@login_required
+def edit_profile(request):
+    profile = request.user.userprofile
+
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, request.FILES, instance=profile)
+        if form.is_valid():
+            form.save()
+            return redirect('dashboard')  # Redirect to the profile detail page or another relevant page
+    else:
+        form = ProfileForm(instance=profile)
+
+    return render(request, 'edit_profile.html', {'form': form})

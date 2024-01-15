@@ -11,15 +11,17 @@
     <div class="top-section">
       <div class="top-left-section">
         <div class="user-profile">
-          <img src="{% static "varad photo.jpg" %}" alt="User Profile" />
+          <img src="{{ userInfo.profile_photo.url }}" alt="User Profile" />
           <h3>{{ user.first_name }}</h3>  
           <p class="location">
-            <img src="{% static "location.png" %}" alt="Location Icon" /> Chhatrapati Sambhajinagar.
+            <img src="{% static "location.png" %}" alt="Location Icon" /> {{userInfo.location}}
           </p>
           <div class="edit-profile">
-            <button>Edit Profile</button>
+            <button><a href="{% url 'edit_profile' %}" class="edit-profile button"
+              >Edit Information</a
+            ></button>
           </div>
-          
+            
         </div>
       </div>
 
@@ -29,20 +31,18 @@
           <p><strong>Full Name:</strong> {{ user.first_name }} {{user.last_name}}</p>
           <p><strong>Email:</strong> {{ user.email }}</p>
           <p><strong>Username:</strong> {{ user.username }}</p>
-          <p> <strong> Phone: </strong> 9988667732  </p>
-          <p> <strong> Address: </strong> Chhatrapati Sambhajinagar Maharashtra India </p>
+          <p> <strong> Phone: </strong> {{userInfo.phone}}  </p>
+          <p> <strong> Address: </strong> {{ userInfo.location }} </p>
           
         </div>
-        <div class="edit-profile">
-          <button>Edit Information</button>
-        </div>
+        
       </div>
     </div>
     <div class="socials-box">
       <h3>Socials</h3>
       <div class="social-item">
         <img src="{% static 'linkedin.png' %}" alt="LinkedIn Logo" />
-        <a href="http://www.linkedin.com/in/yash-wadgaonkar-0782/"><p>Linked In</p></a>
+        <a href="http://www.linkedin.com/in/yash-wadgaonkar-0782/" target ="_blank"><p>Linked In</p></a>
         
       </div>
       <div class="social-item">

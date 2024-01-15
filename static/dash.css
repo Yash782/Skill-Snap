@@ -54,12 +54,12 @@
 
 /* Style for the Edit Profile button */
 .edit-profile button {
-    background-color: #f8f9fb;
+    background-color: lightblue;
     color: #070707;
-    margin-top: 16px;
+    margin-top: 2px;
     border: none;
     border-radius: 5px;
-    padding: 5px 10px;
+    padding: 5px 5px;
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s;

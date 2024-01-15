@@ -1,7 +1,7 @@
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
-
+from sswebsite.models import UserProfile
 # Create your views here.
 def register(request):
     if request.method == 'POST':
@@ -27,7 +27,7 @@ def register(request):
         else:
             messages.info(request, "Password does not match")
             return redirect('register')
-
+        UserProfile.objects.create(user=user)
         return redirect('/signin')
     else:
         return render(request, 'register.html')
@@ -37,8 +37,6 @@ def signin(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
-        print(f"Username: {username}")
-        print(f"Password: {password}")
 
         user = auth.authenticate(username=username, password = password)
 

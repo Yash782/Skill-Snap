@@ -133,7 +133,7 @@
     <div class="top-section">
       <div class="top-left-section">
         <div class="user-profile">
-          <img src="{% static 'varad photo.jpg' %}" alt="User Profile" />
+          <img src="{{ userInfo.profile_photo.url }}" alt="User Profile" />
           <div class="user-info">
             <p>
               <strong>Full Name:</strong> {{ user.first_name }}
@@ -141,12 +141,9 @@
             </p>
             <p><strong>Email:</strong> {{ user.email }}</p>
             <p><strong>Username: </strong>{{ user.username }}</p>
-            <p><strong>Phone Number:</strong> (239) 816-9029</p>
-            <p>
-              <strong>Address:</strong> Chhatrapati Sambhajinagar Maharashtra
-              India
-            </p>
-            <p><strong>Position:</strong> Web Developer</p>
+            <p><strong>Phone Number:</strong> {{userInfo.phone}}</p>
+            <p><strong>Address:</strong> {{userInfo.location}}</p>
+            <p><strong>Position:</strong> {{userInfo.current_position}}</p>
           </div>
         </div>
 
@@ -174,7 +171,13 @@
     </div>
 
     <div class="box-2">
+      {% if certificates %}
       <h2>CERTIFICATES</h2>
+      {% else %}
+      <h2>No Certificates to show</h2>
+
+      {% endif %}
+
       <div class="certificates-items">
         {% for certificate in certificates %}
         <div class="certificates-item">
