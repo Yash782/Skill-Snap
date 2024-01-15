@@ -11,7 +11,12 @@
     <div class="top-section">
       <div class="top-left-section">
         <div class="user-profile">
-          <img src="{{ userInfo.profile_photo.url }}" alt="User Profile" />
+          {% if userInfo.profile_photo %}
+          <img src="{{ userInfo.profile_photo.url }}" alt="Profile Photo" />
+          {% else %}
+          <!-- Default image or placeholder if the user doesn't have a profile photo -->
+          <img src="{% static 'profile.png' %}" alt="Default Profile Photo" />
+          {% endif %}
           <h3>{{ user.first_name }}</h3>  
           <p class="location">
             <img src="{% static "location.png" %}" alt="Location Icon" /> {{userInfo.location}}
@@ -59,7 +64,9 @@
       </div>
    
       <div class="edit-button">
-        <button>Edit Socials</button>
+        <button><a href="{% url 'edit_links' %}" class="edit-profile button"
+          >Edit Socials</a
+        ></button>
     </div>
     
     </div>

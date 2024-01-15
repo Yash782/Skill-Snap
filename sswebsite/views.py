@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from .models import User, Certificate, UserProfile
-from .forms import CertificateForm, ProfileForm
+from .models import User, Certificate, UserProfile, Links
+from .forms import CertificateForm, ProfileForm, LinksForm
 
 # Create your views here.
 
@@ -64,3 +64,17 @@ def edit_profile(request):
         form = ProfileForm(instance=profile)
 
     return render(request, 'edit_profile.html', {'form': form})
+
+
+def edit_links(request):
+    
+
+    if request.method == 'POST':
+        form = LinksForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('dashboard')
+    else:
+        form = ProfileForm()
+
+    return render(request, 'socials.html', {'form': form})

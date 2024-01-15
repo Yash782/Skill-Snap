@@ -15,3 +15,10 @@ class UserProfile(models.Model):
     current_position = models.CharField(max_length=255, blank=True, null=True)
     location = models.CharField(max_length=255, blank=True, null=True)
     phone = models.CharField(max_length = 15, blank = True, null = True)
+
+class Links(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    gitLink = models.URLField()
+    linkedInLink = models.URLField()
+    portfolioLink = models.URLField()
+    otherLink = models.URLField()

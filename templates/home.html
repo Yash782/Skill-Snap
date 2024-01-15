@@ -133,8 +133,13 @@
     <div class="top-section">
       <div class="top-left-section">
         <div class="user-profile">
-          <img src="{{ userInfo.profile_photo.url }}" alt="User Profile" />
-          <div class="user-info">
+          {% if userInfo.profile_photo %}
+          <img src="{{ userInfo.profile_photo.url }}" alt="Profile Photo" />
+          {% else %}
+          <!-- Default image or placeholder if the user doesn't have a profile photo -->
+          <img src="{% static 'profile.png' %}" alt="Default Profile Photo" />
+          {% endif %}
+        
             <p>
               <strong>Full Name:</strong> {{ user.first_name }}
               {{user.last_name}}
